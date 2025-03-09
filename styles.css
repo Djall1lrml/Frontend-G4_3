@@ -293,3 +293,107 @@ a {
         grid-template-columns: repeat(8, 1fr);
     }
 }
+.navbar1{
+background-color:#0E2B3F;
+width:auto;
+height: 130px;
+}
+.navtext{
+text-align: center;
+vertical-align:middle;
+color: white;
+}
+.tech{
+    color: #00E381;
+    
+}
+.stpic{
+    width: 32px;
+    height: 32px;
+    position:relative;
+    top: 48px;
+    right:110px;
+}
+.sign_block{
+    width: 750px;
+    height: 400px;
+    display: block;
+text-align: center;
+border-width: 1px;
+border-radius: 10px;
+border-color: #5D5B5B;
+border-style: solid;
+margin: auto;
+position:relative;
+    top: 50px;
+}
+.h2_1{
+    display:inline-block;
+    width: 355px;
+    height:48px;
+    position: relative;
+    right: 150px;
+    background-size: 100px 100px;
+    background-color:#0E2B3F ;
+    border-radius: 10px;
+color:white;
+}
+.h2_2{
+    display: inline;
+    position: relative;
+    left: 10px;
+    color:#0E2B3F ;
+    border-color:black ;
+    border-bottom-width:1px;
+    border-bottom-style: solid;
+}
+.h2_3{
+    position: relative;
+    right: 250px; 
+    height: 60px;
+    top: 10px;
+}
+.mail{
+display: block;
+position: relative;
+right: 290px;
+height: 35px;
+top: 5px;
+}
+.pass{
+    display: block;
+position: relative;
+right: 307px;
+top: 5px;
+height: 35px;
+}
+.subm{
+    display: block;
+    text-align: center;
+    position: relative;
+top:30px;
+left: 165px;
+}
+input{
+    height: 35px;
+    width: 350px;
+    position: relative;
+right: 165px;
+border-radius: 6px;
+}
+.checks{
+    display: block;
+    text-align: center;
+    position: relative;
+top:30px;
+}
+.ggl{
+    color: #ffffff;
+    background-color: black;
+    width: 220px;
+    height: 35px;
+    border-radius: 10px;
+    position: relative;
+    top:5px;
+
+}
