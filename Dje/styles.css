@@ -34,6 +34,8 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
+    padding: 15px 0;
 }
 
 .logo {
@@ -41,6 +43,7 @@ a {
     align-items: center;
     font-size: 24px;
     font-weight: bold;
+    min-width: max-content;
 }
 
 .logo i {
@@ -52,39 +55,77 @@ a {
     color: #4ade80;
 }
 
-.search-bar {
-    position: relative;
-    width: 33%;
-}
-
-.search-bar input {
+/* Updated Search Bar Styles from UIverse.io */
+.searchBox {
     width: 100%;
-    padding: 8px 15px;
-    border-radius: 20px;
+    max-width: 500px;
+    height: 50px;
+    position: relative;
+    margin: 0 20px;
+}
+
+.searchInput {
+    width: 100%;
+    height: 100%;
     border: none;
-    background-color: #1c3e52;
+    border-radius: 50px;
+    background: #2f3640;
+    padding: 0 60px 0 20px;
+    font-size: 15px;
     color: white;
-    font-size: 14px;
+    transition: all 0.3s ease;
 }
 
-.search-bar input::placeholder {
-    color: #aaa;
+.searchInput::placeholder {
+    color: #666;
 }
 
-.search-bar button {
+.searchInput:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(42, 245, 152, 0.5);
+}
+
+.searchButton {
     position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
+    right: 5px;
+    top: 5px;
+    width: 40px;
+    height: 40px;
     border: none;
-    color: #aaa;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #2AF598 0%, #009EFD 100%);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.searchButton:hover {
+    background: linear-gradient(90deg, #009EFD 0%, #2AF598 100%);
+    transform: scale(0.95);
+}
+
+.searchButton svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
 }
 
 .header-icons {
     display: flex;
     gap: 20px;
+    align-items: center;
+    min-width: max-content;
+}
+
+.header-icons a {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.header-icons a:hover {
+    color: #4ade80;
 }
 
 .header-icons i {
@@ -120,6 +161,12 @@ a {
     color: white;
     margin-right: 20px;
     font-size: 14px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #4ade80;
 }
 
 .nav-item i {
@@ -140,6 +187,11 @@ a {
     color: black;
     padding: 5px 15px;
     border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.daily-offers:hover {
+    background-color: #22c55e;
 }
 
 /* Main Content */
@@ -287,44 +339,13 @@ a {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .header-content {
-        flex-wrap: wrap;
-    }
-    
-    .logo {
-        margin-bottom: 10px;
-    }
-    
-    .search-bar {
-        order: 3;
-        width: 100%;
-        margin-top: 10px;
-    }
-    
-    .header-icons {
-        order: 2;
-    }
-    
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.next-page:hover {
+    background-color: #e5e7eb;
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-    .product-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-@media (min-width: 1025px) {
-    .product-grid {
-        grid-template-columns: repeat(8, 1fr);
-    }
-}
 /* Footer Styles */
 .footer {
     background-color: #f8f9fa;
@@ -433,6 +454,184 @@ a {
     color: #666;
 }
 
+/* Sign-in/Sign-up Styles */
+.navbar1 {
+    background-color: #0E2B3F;
+    width: auto;
+    height: 130px;
+}
+
+.navtext {
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+}
+
+.tech {
+    color: #00E381;
+}
+
+.stpic {
+    width: 32px;
+    height: 32px;
+    position: relative;
+    top: 48px;
+    right: 110px;
+}
+
+.sign_block {
+    width: 750px;
+    height: 400px;
+    display: block;
+    text-align: center;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: #5D5B5B;
+    border-style: solid;
+    margin: auto;
+    position: relative;
+    top: 50px;
+}
+
+.h2_1 {
+    display: inline-block;
+    width: 355px;
+    height: 48px;
+    position: relative;
+    right: 150px;
+    background-size: 100px 100px;
+    background-color: #0E2B3F;
+    border-radius: 10px;
+    color: white;
+}
+
+.h2_2 {
+    display: inline;
+    position: relative;
+    left: 10px;
+    color: #0E2B3F;
+    border-color: black;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+.h2_3 {
+    position: relative;
+    right: 250px;
+    height: 60px;
+    top: 10px;
+}
+
+.mail {
+    display: block;
+    position: relative;
+    right: 290px;
+    height: 35px;
+    top: 5px;
+}
+
+.pass {
+    display: block;
+    position: relative;
+    right: 307px;
+    top: 5px;
+    height: 35px;
+}
+
+.subm {
+    display: block;
+    text-align: center;
+    position: relative;
+    top: 30px;
+    left: 165px;
+}
+
+input {
+    height: 35px;
+    width: 350px;
+    position: relative;
+    right: 165px;
+    border-radius: 6px;
+}
+
+.checks {
+    display: block;
+    text-align: center;
+    position: relative;
+    top: 30px;
+}
+
+.ggl {
+    color: #ffffff;
+    background-color: black;
+    width: 220px;
+    height: 35px;
+    border-radius: 10px;
+    position: relative;
+    top: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header-content {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .logo {
+        margin-bottom: 0;
+        margin-right: auto;
+    }
+    
+    .searchBox {
+        order: 3;
+        width: 100%;
+        max-width: none;
+        margin: 10px 0 0 0;
+    }
+    
+    .header-icons {
+        order: 2;
+    }
+    
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .sign_block {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+    
+    .h2_1, .h2_2, .h2_3, .mail, .pass, .subm {
+        position: static;
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    input {
+        width: 100%;
+        right: 0;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .searchBox {
+        max-width: 400px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .product-grid {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+
 /* Responsive Footer */
 @media (min-width: 768px) {
     .footer-grid {
@@ -444,109 +643,19 @@ a {
     .footer-grid {
         grid-template-columns: repeat(4, 1fr);
     }
-    
 }
-.navbar1{
-    background-color:#0E2B3F;
-    width:auto;
-    height: 130px;
-    }
-    .navtext{
-    text-align: center;
-    vertical-align:middle;
-    color: white;
-    }
-    .tech{
-        color: #00E381;
-        
-    }
-    .stpic{
-        width: 32px;
-        height: 32px;
-        position:relative;
-        top: 48px;
-        right:110px;
-    }
-    .sign_block{
-        width: 750px;
-        height: 400px;
-        display: block;
-    text-align: center;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color: #5D5B5B;
-    border-style: solid;
-    margin: auto;
-    position:relative;
-        top: 50px;
-    }
-    .h2_1{
-        display:inline-block;
-        width: 355px;
-        height:48px;
-        position: relative;
-        right: 150px;
-        background-size: 100px 100px;
-        background-color:#0E2B3F ;
-        border-radius: 10px;
-    color:white;
-    }
-    .h2_2{
-        display: inline;
-        position: relative;
-        left: 10px;
-        color:#0E2B3F ;
-        border-color:black ;
-        border-bottom-width:1px;
-        border-bottom-style: solid;
-    }
-    .h2_3{
-        position: relative;
-        right: 250px; 
-        height: 60px;
-        top: 10px;
-    }
-    .mail{
-    display: block;
-    position: relative;
-    right: 290px;
-    height: 35px;
-    top: 5px;
-    }
-    .pass{
-        display: block;
-    position: relative;
-    right: 307px;
-    top: 5px;
-    height: 35px;
-    }
-    .subm{
-        display: block;
-        text-align: center;
-        position: relative;
-    top:30px;
-    left: 165px;
-    }
-    input{
-        height: 35px;
-        width: 350px;
-        position: relative;
-    right: 165px;
-    border-radius: 6px;
-    }
-    .checks{
-        display: block;
-        text-align: center;
-        position: relative;
-    top:30px;
-    }
-    .ggl{
-        color: #ffffff;
-        background-color: black;
-        width: 220px;
-        height: 35px;
-        border-radius: 10px;
-        position: relative;
-        top:5px;
-    
-    }
+
+/* Fix for newsletter button hover */
+.newsletter-form button:hover {
+    background-color: #0a1f2d;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Override for searchInput to fix conflict with general input styles */
+.searchInput {
+    position: static;
+    right: auto;
+    width: 100%;
+    height: 100%;
+}
