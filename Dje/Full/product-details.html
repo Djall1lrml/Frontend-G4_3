@@ -486,10 +486,10 @@
 
     <!-- Breadcrumb -->
     <div class="container" style="padding-top: 20px;">
-        <div style="font-size: 14px; color: #666;">
+        <div style="font-size: 14px; color: #666;" id="breadcrumb">
             <a href="index.html" style="color: #0e2a3b;">Home</a> &gt; 
-            <a href="#" style="color: #0e2a3b;">Smartphones</a> &gt; 
-            <span>Samsung Galaxy S23 (8 Gb) (256 Gb)</span>
+            <a href="#" style="color: #0e2a3b;" id="category-link">Smartphones</a> &gt; 
+            <span id="product-name">Samsung Galaxy S23 (8 Gb) (256 Gb)</span>
         </div>
     </div>
     <!-- Product Details -->
@@ -501,26 +501,15 @@
                     <div class="main-image">
                         <img src="https://webstar-electro.com/documents/document_service_13051255_632_5_664317872.JPG" alt="Samsung Galaxy S23" id="main-product-image">
                     </div>
-                    <div class="thumbnail-container">
-                        <div class="thumbnail active" onclick="changeImage(this, 'https://webstar-electro.com/documents/document_service_13051255_632_5_664317872.JPG')">
-                            <img src="https://webstar-electro.com/documents/document_service_13051255_632_5_664317872.JPG" alt="Samsung Galaxy S23 - Front">
-                        </div>
-                        <div class="thumbnail" onclick="changeImage(this, 'https://images.samsung.com/is/image/samsung/p6pim/n_africa/2302/gallery/n_africa-galaxy-s23-s911-sm-s911bzgcmwd-534859896?$650_519_PNG$')">
-                            <img src="https://images.samsung.com/is/image/samsung/p6pim/n_africa/2302/gallery/n_africa-galaxy-s23-s911-sm-s911bzgcmwd-534859896?$650_519_PNG$" alt="Samsung Galaxy S23 - Back">
-                        </div>
-                        <div class="thumbnail" onclick="changeImage(this, 'https://images.samsung.com/is/image/samsung/p6pim/n_africa/2302/gallery/n_africa-galaxy-s23-s911-sm-s911bzgcmwd-534859897?$650_519_PNG$')">
-                            <img src="https://images.samsung.com/is/image/samsung/p6pim/n_africa/2302/gallery/n_africa-galaxy-s23-s911-sm-s911bzgcmwd-534859897?$650_519_PNG$" alt="Samsung Galaxy S23 - Side">
-                        </div>
-                        <div class="thumbnail" onclick="changeImage(this, 'https://images.samsung.com/is/image/samsung/p6pim/n_africa/2302/gallery/n_africa-galaxy-s23-s911-sm-s911bzgcmwd-534859898?$650_519_PNG$')">
-                            <img src="https://images.samsung.com/is/image/samsung/p6pim/n_africa/2302/gallery/n_africa-galaxy-s23-s911-sm-s911bzgcmwd-534859898?$650_519_PNG$" alt="Samsung Galaxy S23 - Camera">
-                        </div>
+                    <div class="thumbnail-container" id="thumbnail-container">
+                        <!-- Thumbnails will be dynamically generated -->
                     </div>
                 </div>
 
                 <!-- Product Info -->
                 <div class="product-info">
-                    <h1 class="product-title">Samsung Galaxy S23 (8 Gb) (256 Gb)</h1>
-                    <div class="product-brand">Brand: Samsung</div>
+                    <h1 class="product-title" id="product-title">Samsung Galaxy S23 (8 Gb) (256 Gb)</h1>
+                    <div class="product-brand" id="product-brand">Brand: Samsung</div>
                     
                     <div class="product-rating">
                         <div class="stars">
@@ -534,27 +523,23 @@
                     </div>
                     
                     <div class="product-price-container">
-                        <div class="current-price">22,750 D.A</div>
-                        <div class="original-price-details">120,000 D.A</div>
-                        <div class="discount">-81%</div>
+                        <div class="current-price" id="current-price">22,750 D.A</div>
+                        <div class="original-price-details" id="original-price">120,000 D.A</div>
+                        <div class="discount" id="discount">-81%</div>
                     </div>
                     
-                    <div class="availability">
+                    <div class="availability" id="availability">
                         <i class="fas fa-check-circle"></i> In Stock (15 units)
                     </div>
                     
-                    <div class="product-description">
+                    <div class="product-description" id="product-description">
                         <p>The Samsung Galaxy S23 features a sleek design with a 6.1-inch Dynamic AMOLED 2X display, Snapdragon 8 Gen 2 processor, and a triple camera system. With 8GB RAM and 256GB storage, it offers powerful performance for all your needs.</p>
                     </div>
                     
                     <div class="product-features">
                         <h3>Key Features</h3>
-                        <ul class="features-list">
-                            <li><i class="fas fa-check"></i> 6.1" FHD+ Dynamic AMOLED 2X Display (2340 x 1080)</li>
-                            <li><i class="fas fa-check"></i> Snapdragon 8 Gen 2 Processor</li>
-                            <li><i class="fas fa-check"></i> 8GB RAM, 256GB Storage</li>
-                            <li><i class="fas fa-check"></i> Triple Camera: 50MP Wide, 12MP Ultra-Wide, 10MP Telephoto</li>
-                            <li><i class="fas fa-check"></i> 3900mAh Battery with Fast Charging</li>
+                        <ul class="features-list" id="features-list">
+                            <!-- Features will be dynamically generated -->
                         </ul>
                     </div>
                     
@@ -567,10 +552,10 @@
                         </div>
                     </div>
                     
-                    <!-- Replace the existing action buttons with these -->
+                    <!-- Action buttons -->
                     <div class="action-buttons">
                         <!-- Add to Cart Button -->
-                        <div data-tooltip="Add to your cart" class="button add-to-cart-btn">
+                        <div data-tooltip="Add to your cart" class="button add-to-cart-btn" id="add-to-cart-btn">
                             <div class="button-wrapper">
                                 <div class="text">Add to Cart</div>
                                 <span class="icon">
@@ -582,8 +567,8 @@
                             </div>
                         </div>
                         
-                        <!-- Buy Now Button - Using exactly your provided code -->
-                        <div data-tooltip="Price: 22,750 D.A" class="button buy-now-btn">
+                        <!-- Buy Now Button -->
+                        <div data-tooltip="Price: 22,750 D.A" class="button buy-now-btn" id="buy-now-btn">
                             <div class="button-wrapper">
                                 <div class="text">Buy Now</div>
                                 <span class="icon">
@@ -600,126 +585,16 @@
             <!-- Specifications -->
             <div class="specifications">
                 <h2>Specifications</h2>
-                <table class="specs-table">
-                    <tr>
-                        <th>Display</th>
-                        <td>6.1" FHD+ Dynamic AMOLED 2X, 2340 x 1080 pixels, 120Hz refresh rate</td>
-                    </tr>
-                    <tr>
-                        <th>Processor</th>
-                        <td>Qualcomm Snapdragon 8 Gen 2 (4nm)</td>
-                    </tr>
-                    <tr>
-                        <th>Memory</th>
-                        <td>8GB RAM</td>
-                    </tr>
-                    <tr>
-                        <th>Storage</th>
-                        <td>256GB (non-expandable)</td>
-                    </tr>
-                    <tr>
-                        <th>Rear Camera</th>
-                        <td>Triple Camera: 50MP Wide (f/1.8), 12MP Ultra-Wide (f/2.2), 10MP Telephoto (f/2.4) with 3x optical zoom</td>
-                    </tr>
-                    <tr>
-                        <th>Front Camera</th>
-                        <td>12MP (f/2.2)</td>
-                    </tr>
-                    <tr>
-                        <th>Battery</th>
-                        <td>3900mAh with 25W wired charging, 15W wireless charging</td>
-                    </tr>
-                    <tr>
-                        <th>Operating System</th>
-                        <td>Android 13 with One UI 5.1</td>
-                    </tr>
-                    <tr>
-                        <th>Connectivity</th>
-                        <td>5G, Wi-Fi 6E, Bluetooth 5.3, NFC, USB Type-C</td>
-                    </tr>
-                    <tr>
-                        <th>Dimensions</th>
-                        <td>146.3 x 70.9 x 7.6 mm</td>
-                    </tr>
-                    <tr>
-                        <th>Weight</th>
-                        <td>168g</td>
-                    </tr>
-                    <tr>
-                        <th>Colors</th>
-                        <td>Phantom Black, Cream, Green, Lavender</td>
-                    </tr>
-                    <tr>
-                        <th>Water Resistance</th>
-                        <td>IP68 (water and dust resistant)</td>
-                    </tr>
+                <table class="specs-table" id="specs-table">
+                    <!-- Specifications will be dynamically generated -->
                 </table>
             </div>
             
             <!-- Related Products -->
             <div class="related-products">
                 <h2>You May Also Like</h2>
-                <div class="product-grid">
-                    <!-- Product Cards -->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">Galaxy A35 5G</span>
-                            <img src="https://webstar-electro.com/documents/document_service_17326108_632_5_1152359631.jpg" alt="Galaxy A35">
-                        </div>
-                        <div class="product-info">
-                            <h3>Galaxy A35 5G (3 Gb) (64 Gb)</h3>
-                            <div class="product-price">42250 D.A</div>
-                            <div class="product-price-info">
-                                <span class="original-price">49000 D.A</span>
-                                <span class="new-price">New: 22,750 D.A</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">Xiaomi Note 13 Pro 4G</span>
-                            <img src="https://webstar-electro.com/documents/document_service_16484940_632_5_326591997.jpg" alt="Xiaomi Note 13">
-                        </div>
-                        <div class="product-info">
-                            <h3>Xiaomi Note 13 Pro 4G (6 Gb) (128Gb)</h3>
-                            <div class="product-price">42250 D.A</div>
-                            <div class="product-price-info">
-                                <span class="original-price">49000 D.A</span>
-                                <span class="new-price">New: 22,750 D.A</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">Oppo Reno12 F 5G</span>
-                            <img src="https://webstar-electro.com/documents/document_service_18750141_632_5_319322223.jpg" alt="Oppo Reno12">
-                        </div>
-                        <div class="product-info">
-                            <h3>Oppo Reno12 F 5G (8 Gb) (256Gb)</h3>
-                            <div class="product-price">42250 D.A</div>
-                            <div class="product-price-info">
-                                <span class="original-price">49000 D.A</span>
-                                <span class="new-price">New: 22,750 D.A</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image">
-                            <span class="product-badge">INFINIX Hot 50</span>
-                            <img src="https://webstar-electro.com/documents/document_service_21291974_632_5_28505859.JPG" alt="INFINIX Hot 50">
-                        </div>
-                        <div class="product-info">
-                            <h3>INFINIX Hot 50 (8 Gb) (128Gb)</h3>
-                            <div class="product-price">42250 D.A</div>
-                            <div class="product-price-info">
-                                <span class="original-price">49000 D.A</span>
-                                <span class="new-price">New: 22,750 D.A</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="product-grid" id="related-products">
+                    <!-- Related products will be dynamically generated -->
                 </div>
             </div>
         </div>
@@ -789,154 +664,327 @@
     </footer>
 
     <script>
-        
-                    // Add this script to your product-details.html file
-            document.addEventListener('DOMContentLoaded', function() {
-                // Get product ID from URL
-                const urlParams = new URLSearchParams(window.location.search);
-                const productId = urlParams.get('id');
-                
-                // If no product ID is provided, redirect to index
-                if (!productId) {
-                    window.location.href = 'index.html';
-                    return;
-                }
-                
-                // In a real application, you would fetch product data from a database
-                // For this example, we'll use a simple object with product data
-                const productData = {
-                    'samsung-galaxy-s23': {
-                        name: 'Samsung Galaxy S23 (8 Gb) (256 Gb)',
-                        brand: 'Samsung',
-                        price: '22,750 D.A',
-                        originalPrice: '120,000 D.A',
-                        discount: '81%',
-                        mainImage: 'https://webstar-electro.com/documents/document_service_13051255_632_5_664317872.JPG',
-                        images: [
-                            'https://webstar-electro.com/documents/document_service_13051255_632_5_664317872.JPG',
-                            'https://images.samsung.com/is/image/samsung/p6pim/n_africa/2302/gallery/n_africa-galaxy-s23-s911-sm-s911bzgcmwd-534859896?$650_519_PNG$',
-                            'https://images.samsung.com/is/image/samsung/p6pim/n_africa/2302/gallery/n_africa-galaxy-s23-s911-sm-s911bzgcmwd-534859897?$650_519_PNG$',
-                            'https://images.samsung.com/is/image/samsung/p6pim/n_africa/2302/gallery/n_africa-galaxy-s23-s911-sm-s911bzgcmwd-534859898?$650_519_PNG$'
-                        ],
-                        description: 'The Samsung Galaxy S23 features a sleek design with a 6.1-inch Dynamic AMOLED 2X display, Snapdragon 8 Gen 2 processor, and a triple camera system. With 8GB RAM and 256GB storage, it offers powerful performance for all your needs.',
-                        features: [
-                            '6.1" FHD+ Dynamic AMOLED 2X Display (2340 x 1080)',
-                            'Snapdragon 8 Gen 2 Processor',
-                            '8GB RAM, 256GB Storage',
-                            'Triple Camera: 50MP Wide, 12MP Ultra-Wide, 10MP Telephoto',
-                            '3900mAh Battery with Fast Charging'
-                        ],
-                        stock: 15
-                    },
-                    // Add more products as needed
-                    'iphone-15-pro': {
-                        name: 'iPhone 15 Pro (8 Gb) (256 Gb)',
-                        brand: 'Apple',
-                        price: '32,750 D.A',
-                        originalPrice: '150,000 D.A',
-                        discount: '78%',
-                        mainImage: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1692845702708',
-                        images: [
-                            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1692845702708',
-                            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch-bluetitanium?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1692845699311',
-                            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch-whitetitanium?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1692845706590',
-                            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch-blacktitanium?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1692845694698'
-                        ],
-                        description: 'The iPhone 15 Pro features the A17 Pro chip, a titanium design, and a 48MP camera system with 3x telephoto. With 8GB RAM and 256GB storage, it offers exceptional performance for all your needs.',
-                        features: [
-                            '6.1" Super Retina XDR display with ProMotion',
-                            'A17 Pro chip with 6-core CPU',
-                            '8GB RAM, 256GB Storage',
-                            'Pro camera system: 48MP Main, 12MP Ultra Wide, 12MP Telephoto',
-                            'Up to 23 hours video playback'
-                        ],
-                        stock: 10
-                    }
-                };
-                
-                // Get the product data
-                const product = productData[productId];
-                
-                // If product doesn't exist, redirect to index
-                if (!product) {
-                    window.location.href = 'index.html';
-                    return;
-                }
-                
-                // Update page title
-                document.title = `${product.name} - TechMarket`;
-                
-                // Update product details
-                document.querySelector('.product-title').textContent = product.name;
-                document.querySelector('.product-brand').textContent = `Brand: ${product.brand}`;
-                document.querySelector('.current-price').textContent = product.price;
-                document.querySelector('.original-price-details').textContent = product.originalPrice;
-                document.querySelector('.discount').textContent = `-${product.discount}`;
-                document.querySelector('.availability').innerHTML = `<i class="fas fa-check-circle"></i> In Stock (${product.stock} units)`;
-                document.querySelector('.product-description p').textContent = product.description;
-                
-                // Update features
-                const featuresList = document.querySelector('.features-list');
-                featuresList.innerHTML = '';
-                product.features.forEach(feature => {
-                    featuresList.innerHTML += `
-                        <li><i class="fas fa-check"></i> ${feature}</li>
-                    `;
-                });
-                
-                // Update main image
-                const mainImage = document.getElementById('main-product-image');
-                mainImage.src = product.mainImage;
-                mainImage.alt = product.name;
-                
-                // Update thumbnails
-                const thumbnailContainer = document.querySelector('.thumbnail-container');
-                thumbnailContainer.innerHTML = '';
-                product.images.forEach((image, index) => {
-                    thumbnailContainer.innerHTML += `
-                        <div class="thumbnail ${index === 0 ? 'active' : ''}" onclick="changeImage(this, '${image}')">
-                            <img src="${image}" alt="${product.name} - View ${index + 1}">
-                        </div>
-                    `;
-                });
-                
-                // Update buy now button tooltip
-                document.querySelector('.buy-now-btn').setAttribute('data-tooltip', `Price: ${product.price}`);
-            });
-
-                    // Update the buyNow function in your product-details.html
-            function buyNow() {
-                const quantity = document.getElementById('quantity').value;
-                const productName = document.querySelector('.product-title').textContent;
-                const productPrice = document.querySelector('.current-price').textContent;
-                
-                // You can store the selected product in localStorage to access it on the checkout page
-                localStorage.setItem('checkout_product', JSON.stringify({
-                    name: productName,
-                    price: productPrice,
-                    quantity: quantity,
-                    image: document.getElementById('main-product-image').src
-                }));
-                
-                // Redirect to checkout page
-                window.location.href = "checkout.html";
+        // Product database
+        const productDatabase = {
+            // Smartphones
+            'samsung-galaxy-s23': {
+                name: 'Samsung Galaxy S23 (8 Gb) (256 Gb)',
+                brand: 'Samsung',
+                category: 'Smartphones',
+                price: '22,750 D.A',
+                originalPrice: '120,000 D.A',
+                discount: '81%',
+                stock: 15,
+                mainImage: 'https://webstar-electro.com/documents/document_service_13051255_632_5_664317872.JPG',
+                images: [
+                    'https://webstar-electro.com/documents/document_service_13051255_632_5_664317872.JPG',
+                    'https://images.samsung.com/is/image/samsung/p6pim/n_africa/2302/gallery/n_africa-galaxy-s23-s911-sm-s911bzgcmwd-534859896?$650_519_PNG$',
+                    'https://images.samsung.com/is/image/samsung/p6pim/n_africa/2302/gallery/n_africa-galaxy-s23-s911-sm-s911bzgcmwd-534859897?$650_519_PNG$',
+                    'https://images.samsung.com/is/image/samsung/p6pim/n_africa/2302/gallery/n_africa-galaxy-s23-s911-sm-s911bzgcmwd-534859898?$650_519_PNG$'
+                ],
+                description: 'The Samsung Galaxy S23 features a sleek design with a 6.1-inch Dynamic AMOLED 2X display, Snapdragon 8 Gen 2 processor, and a triple camera system. With 8GB RAM and 256GB storage, it offers powerful performance for all your needs.',
+                features: [
+                    '6.1" FHD+ Dynamic AMOLED 2X Display (2340 x 1080)',
+                    'Snapdragon 8 Gen 2 Processor',
+                    '8GB RAM, 256GB Storage',
+                    'Triple Camera: 50MP Wide, 12MP Ultra-Wide, 10MP Telephoto',
+                    '3900mAh Battery with Fast Charging'
+                ],
+                specifications: [
+                    { name: 'Display', value: '6.1" FHD+ Dynamic AMOLED 2X, 2340 x 1080 pixels, 120Hz refresh rate' },
+                    { name: 'Processor', value: 'Qualcomm Snapdragon 8 Gen 2 (4nm)' },
+                    { name: 'Memory', value: '8GB RAM' },
+                    { name: 'Storage', value: '256GB (non-expandable)' },
+                    { name: 'Rear Camera', value: 'Triple Camera: 50MP Wide (f/1.8), 12MP Ultra-Wide (f/2.2), 10MP Telephoto (f/2.4) with 3x optical zoom' },
+                    { name: 'Front Camera', value: '12MP (f/2.2)' },
+                    { name: 'Battery', value: '3900mAh with 25W wired charging, 15W wireless charging' },
+                    { name: 'Operating System', value: 'Android 13 with One UI 5.1' },
+                    { name: 'Connectivity', value: '5G, Wi-Fi 6E, Bluetooth 5.3, NFC, USB Type-C' },
+                    { name: 'Dimensions', value: '146.3 x 70.9 x 7.6 mm' },
+                    { name: 'Weight', value: '168g' },
+                    { name: 'Colors', value: 'Phantom Black, Cream, Green, Lavender' },
+                    { name: 'Water Resistance', value: 'IP68 (water and dust resistant)' }
+                ],
+                relatedProducts: ['realme-gt6', 'xiaomi-note-13-pro', 'oppo-reno12f']
+            },
+            'realme-gt6': {
+                name: 'Realme Gt6 (12 Gb) (256 Gb)',
+                brand: 'Realme',
+                category: 'Smartphones',
+                price: '42,250 D.A',
+                originalPrice: '49,000 D.A',
+                discount: '14%',
+                stock: 8,
+                mainImage: 'https://webstar-electro.com/documents/document_service_19048571_632_5_1527526616.jpg',
+                images: [
+                    'https://webstar-electro.com/documents/document_service_19048571_632_5_1527526616.jpg',
+                    'https://fdn2.gsmarena.com/vv/pics/realme/realme-gt6-1.jpg',
+                    'https://fdn2.gsmarena.com/vv/pics/realme/realme-gt6-2.jpg',
+                    'https://fdn2.gsmarena.com/vv/pics/realme/realme-gt6-3.jpg'
+                ],
+                description: 'The Realme GT6 is a powerful smartphone featuring a 6.78-inch AMOLED display with 120Hz refresh rate, Snapdragon 8s Gen 3 processor, and a 50MP triple camera system. With 12GB RAM and 256GB storage, it delivers exceptional performance for gaming and multitasking.',
+                features: [
+                    '6.78" AMOLED Display with 120Hz refresh rate',
+                    'Snapdragon 8s Gen 3 Processor',
+                    '12GB RAM, 256GB Storage',
+                    'Triple Camera: 50MP Main, 8MP Ultra-Wide, 2MP Macro',
+                    '5500mAh Battery with 120W Fast Charging'
+                ],
+                specifications: [
+                    { name: 'Display', value: '6.78" AMOLED, 2780 x 1264 pixels, 120Hz refresh rate' },
+                    { name: 'Processor', value: 'Qualcomm Snapdragon 8s Gen 3' },
+                    { name: 'Memory', value: '12GB RAM' },
+                    { name: 'Storage', value: '256GB (non-expandable)' },
+                    { name: 'Rear Camera', value: 'Triple Camera: 50MP Main (f/1.8), 8MP Ultra-Wide (f/2.2), 2MP Macro (f/2.4)' },
+                    { name: 'Front Camera', value: '16MP (f/2.5)' },
+                    { name: 'Battery', value: '5500mAh with 120W SuperVOOC charging' },
+                    { name: 'Operating System', value: 'Android 14 with Realme UI 5.0' },
+                    { name: 'Connectivity', value: '5G, Wi-Fi 6, Bluetooth 5.3, NFC, USB Type-C' },
+                    { name: 'Dimensions', value: '162.9 x 75.8 x 8.7 mm' },
+                    { name: 'Weight', value: '199g' },
+                    { name: 'Colors', value: 'Silver, Green, Purple' },
+                    { name: 'Water Resistance', value: 'IP65 (splash resistant)' }
+                ],
+                relatedProducts: ['samsung-galaxy-s23', 'xiaomi-note-13-pro', 'poco-x7-pro']
+            },
+            'xiaomi-note-13-pro': {
+                name: 'Xiaomi Note 13 Pro 4G (6 Gb) (128Gb)',
+                brand: 'Xiaomi',
+                category: 'Smartphones',
+                price: '42,250 D.A',
+                originalPrice: '49,000 D.A',
+                discount: '14%',
+                stock: 12,
+                mainImage: 'https://webstar-electro.com/documents/document_service_16484940_632_5_326591997.jpg',
+                images: [
+                    'https://webstar-electro.com/documents/document_service_16484940_632_5_326591997.jpg',
+                    'https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-13-pro-4g-1.jpg',
+                    'https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-13-pro-4g-2.jpg',
+                    'https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-13-pro-4g-3.jpg'
+                ],
+                description: 'The Xiaomi Note 13 Pro 4G features a stunning 6.67-inch AMOLED display, Snapdragon 7s Gen 2 processor, and an impressive 200MP main camera. With 6GB RAM and 128GB storage, it offers great performance and value.',
+                features: [
+                    '6.67" AMOLED Display with 120Hz refresh rate',
+                    'Snapdragon 7s Gen 2 Processor',
+                    '6GB RAM, 128GB Storage',
+                    '200MP Main Camera with OIS',
+                    '5000mAh Battery with 67W Fast Charging'
+                ],
+                specifications: [
+                    { name: 'Display', value: '6.67" AMOLED, 2400 x 1080 pixels, 120Hz refresh rate' },
+                    { name: 'Processor', value: 'Qualcomm Snapdragon 7s Gen 2' },
+                    { name: 'Memory', value: '6GB RAM' },
+                    { name: 'Storage', value: '128GB (expandable via microSD)' },
+                    { name: 'Rear Camera', value: 'Triple Camera: 200MP Main (f/1.7) with OIS, 8MP Ultra-Wide (f/2.2), 2MP Macro (f/2.4)' },
+                    { name: 'Front Camera', value: '16MP (f/2.4)' },
+                    { name: 'Battery', value: '5000mAh with 67W fast charging' },
+                    { name: 'Operating System', value: 'Android 13 with MIUI 14' },
+                    { name: 'Connectivity', value: '4G LTE, Wi-Fi 5, Bluetooth 5.2, NFC, USB Type-C' },
+                    { name: 'Dimensions', value: '161.2 x 74.3 x 8.0 mm' },
+                    { name: 'Weight', value: '187g' },
+                    { name: 'Colors', value: 'Black, Blue, Purple' },
+                    { name: 'Water Resistance', value: 'IP54 (splash resistant)' }
+                ],
+                relatedProducts: ['samsung-galaxy-s23', 'realme-gt6', 'oppo-reno12f']
+            },
+            // Add more smartphone products here
+            
+            // Laptops
+            'asus-vivobook-17': {
+                name: 'Asus Vivobook 17 S1704ZA-BX350W 17.3 Inch HD+ Laptop',
+                brand: 'Asus',
+                category: 'Laptops',
+                price: '42,250 D.A',
+                originalPrice: '49,000 D.A',
+                discount: '14%',
+                stock: 5,
+                mainImage: 'https://m.media-amazon.com/images/I/71idDyZ-lXL._AC_SL1500_.jpg',
+                images: [
+                    'https://m.media-amazon.com/images/I/71idDyZ-lXL._AC_SL1500_.jpg',
+                    'https://m.media-amazon.com/images/I/71Zt5VFgYtL._AC_SL1500_.jpg',
+                    'https://m.media-amazon.com/images/I/71Zt5VFgYtL._AC_SL1500_.jpg',
+                    'https://m.media-amazon.com/images/I/71Zt5VFgYtL._AC_SL1500_.jpg'
+                ],
+                description: 'The Asus Vivobook 17 features a large 17.3-inch HD+ display, Intel Core i7-1255U processor, 16GB DDR4 RAM, and 512GB SSD storage. Perfect for productivity and entertainment with its spacious screen and powerful performance.',
+                features: [
+                    '17.3" HD+ Display (1600 x 900)',
+                    'Intel Core i7-1255U Processor (1.7 GHz)',
+                    '16GB DDR4 RAM',
+                    '512GB SSD Storage',
+                    'Intel Iris X Graphics'
+                ],
+                specifications: [
+                    { name: 'Display', value: '17.3" HD+ (1600 x 900) Anti-glare' },
+                    { name: 'Processor', value: 'Intel Core i7-1255U (1.7 GHz, up to 4.7 GHz with Turbo Boost)' },
+                    { name: 'Memory', value: '16GB DDR4 RAM' },
+                    { name: 'Storage', value: '512GB PCIe NVMe M.2 SSD' },
+                    { name: 'Graphics', value: 'Intel Iris X Graphics' },
+                    { name: 'Operating System', value: 'Windows 11 Home' },
+                    { name: 'Keyboard', value: 'AZERTY Keyboard with Numpad' },
+                    { name: 'Connectivity', value: 'Wi-Fi 6 (802.11ax), Bluetooth 5.0' },
+                    { name: 'Ports', value: '1x USB 3.2 Gen 1 Type-C, 2x USB 3.2 Gen 1 Type-A, 1x USB 2.0, 1x HDMI, 1x 3.5mm Combo Audio Jack' },
+                    { name: 'Battery', value: '45Wh, up to 8 hours' },
+                    { name: 'Dimensions', value: '399.3 x 254.3 x 19.9 mm' },
+                    { name: 'Weight', value: '2.1 kg' },
+                    { name: 'Color', value: 'Silver' }
+                ],
+                relatedProducts: ['samsung-galaxy-book4', 'dell-xps-16', 'asus-vivobook-15']
+            },
+            // Add more laptop products here
+            
+            // Accessories
+            'logitech-mx-master-3s': {
+                name: 'Logitech MX Master 3S - Wireless Performance Mouse',
+                brand: 'Logitech',
+                category: 'Accessories',
+                price: '8,750 D.A',
+                originalPrice: '12,000 D.A',
+                discount: '27%',
+                stock: 20,
+                mainImage: 'https://images-na.ssl-images-amazon.com/images/I/61xKiCADfpL._AC_SL1500_.jpg',
+                images: [
+                    'https://images-na.ssl-images-amazon.com/images/I/61xKiCADfpL._AC_SL1500_.jpg',
+                    'https://images-na.ssl-images-amazon.com/images/I/71vb3NlghJL._AC_SL1500_.jpg',
+                    'https://images-na.ssl-images-amazon.com/images/I/71Ck7dGvdyL._AC_SL1500_.jpg',
+                    'https://images-na.ssl-images-amazon.com/images/I/71qOYeY0bfL._AC_SL1500_.jpg'
+                ],
+                description: 'The Logitech MX Master 3S is a high-performance wireless mouse with ultra-fast scrolling, quiet clicks, and an 8K DPI sensor. It works on any surface, including glass, and can connect to up to 3 devices simultaneously.',
+                features: [
+                    'Ultra-fast MagSpeed electromagnetic scrolling',
+                    'Quiet clicks - 90% quieter than previous models',
+                    '8K DPI sensor - works on any surface, including glass',
+                    'Connect up to 3 devices via Bluetooth or USB receiver',
+                    'Ergonomic design with thumb controls'
+                ],
+                specifications: [
+                    { name: 'Sensor', value: '8000 DPI Darkfield high precision sensor' },
+                    { name: 'Buttons', value: '7 buttons (including scroll wheel)' },
+                    { name: 'Scrolling', value: 'MagSpeed electromagnetic scrolling' },
+                    { name: 'Wireless', value: 'Bluetooth Low Energy or Logi Bolt USB receiver' },
+                    { name: 'Battery', value: 'Rechargeable Li-Po (500 mAh) battery, up to 70 days on a full charge' },
+                    { name: 'Charging', value: 'USB-C quick charging (1 minute charge = 3 hours of use)' },
+                    { name: 'Compatibility', value: 'Windows, macOS, Linux, iPadOS' },
+                    { name: 'Dimensions', value: '124.9 x 84.3 x 51 mm' },
+                    { name: 'Weight', value: '141g' },
+                    { name: 'Colors', value: 'Graphite, Pale Gray' }
+                ],
+                relatedProducts: ['logitech-mx-keys', 'sony-wh-1000xm5', 'apple-airpods-pro-2']
             }
+            // Add more accessory products here
+        };
 
-// Make sure to attach this function to your Buy Now button
-document.querySelector('.buy-now-btn').addEventListener('click', buyNow);
-                // Add event listeners to the buttons
-        document.querySelector('.add-to-cart-btn').addEventListener('click', function() {
-            const quantity = document.getElementById('quantity').value;
-            alert(`Added ${quantity} Samsung Galaxy S23 to your cart!`);
-            // Here you would typically update the cart in your system
-        });
+        // Function to get product details by ID
+        function getProductById(productId) {
+            // Check if product exists in database
+            if (productDatabase[productId]) {
+                return productDatabase[productId];
+            }
+            
+            // If product ID has a suffix like "-dup", try to get the original product
+            if (productId.includes('-dup') || productId.includes('-alt')) {
+                const originalId = productId.split('-dup')[0].split('-alt')[0];
+                if (productDatabase[originalId]) {
+                    return productDatabase[originalId];
+                }
+            }
+            
+            // Default to Samsung Galaxy S23 if product not found
+            return productDatabase['samsung-galaxy-s23'];
+        }
 
-        document.querySelector('.buy-now-btn').addEventListener('click', function() {
-            const quantity = document.getElementById('quantity').value;
-            alert(`Proceeding to checkout with ${quantity} Samsung Galaxy S23!`);
-            // Redirect to checkout page
-            window.location.href = "checkout.html";
-        });
+        // Function to update product details
+        function updateProductDetails(productId) {
+            const product = getProductById(productId);
+            
+            // Update page title
+            document.title = `${product.name} - TechMarket`;
+            
+            // Update breadcrumb
+            document.getElementById('product-name').textContent = product.name;
+            document.getElementById('category-link').textContent = product.category;
+            
+            // Update product details
+            document.getElementById('product-title').textContent = product.name;
+            document.getElementById('product-brand').textContent = `Brand: ${product.brand}`;
+            document.getElementById('current-price').textContent = product.price;
+            document.getElementById('original-price').textContent = product.originalPrice;
+            document.getElementById('discount').textContent = `-${product.discount}`;
+            document.getElementById('availability').innerHTML = `<i class="fas fa-check-circle"></i> In Stock (${product.stock} units)`;
+            document.getElementById('product-description').innerHTML = `<p>${product.description}</p>`;
+            
+            // Update main image
+            document.getElementById('main-product-image').src = product.mainImage;
+            document.getElementById('main-product-image').alt = product.name;
+            
+            // Update thumbnails
+            const thumbnailContainer = document.getElementById('thumbnail-container');
+            thumbnailContainer.innerHTML = '';
+            product.images.forEach((image, index) => {
+                thumbnailContainer.innerHTML += `
+                    <div class="thumbnail ${index === 0 ? 'active' : ''}" onclick="changeImage(this, '${image}')">
+                        <img src="${image}" alt="${product.name} - View ${index + 1}">
+                    </div>
+                `;
+            });
+            
+            // Update features
+            const featuresList = document.getElementById('features-list');
+            featuresList.innerHTML = '';
+            product.features.forEach(feature => {
+                featuresList.innerHTML += `
+                    <li><i class="fas fa-check"></i> ${feature}</li>
+                `;
+            });
+            
+            // Update specifications
+            const specsTable = document.getElementById('specs-table');
+            specsTable.innerHTML = '';
+            product.specifications.forEach(spec => {
+                specsTable.innerHTML += `
+                    <tr>
+                        <th>${spec.name}</th>
+                        <td>${spec.value}</td>
+                    </tr>
+                `;
+            });
+            
+            // Update related products
+            const relatedProductsContainer = document.getElementById('related-products');
+            relatedProductsContainer.innerHTML = '';
+            
+            if (product.relatedProducts && product.relatedProducts.length > 0) {
+                product.relatedProducts.forEach(relatedId => {
+                    const relatedProduct = getProductById(relatedId);
+                    if (relatedProduct) {
+                        relatedProductsContainer.innerHTML += `
+                            <div class="product-card" data-product-id="${relatedId}">
+                                <a href="javascript:void(0);" class="product-link" onclick="openProductDetails('${relatedId}')">
+                                    <div class="product-image">
+                                        <span class="product-badge">${relatedProduct.brand}</span>
+                                        <img src="${relatedProduct.mainImage}" alt="${relatedProduct.name}">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3>${relatedProduct.name}</h3>
+                                        <div class="product-price">${relatedProduct.price}</div>
+                                        <div class="product-price-info">
+                                            <span class="original-price">${relatedProduct.originalPrice}</span>
+                                            <span class="new-price">New: ${relatedProduct.price}</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        `;
+                    }
+                });
+            }
+            
+            // Update buy now button tooltip
+            document.getElementById('buy-now-btn').setAttribute('data-tooltip', `Price: ${product.price}`);
+            
+            // Update quantity input max value
+            document.getElementById('quantity').setAttribute('max', product.stock);
+        }
+
         // Function to change the main product image
         function changeImage(thumbnail, newSrc) {
             // Update main image
@@ -970,19 +1018,59 @@ document.querySelector('.buy-now-btn').addEventListener('click', buyNow);
             }
         }
         
-        // Cart functions
-        function addToCart() {
-            const quantity = document.getElementById('quantity').value;
-            alert(`Added ${quantity} Samsung Galaxy S23 to your cart!`);
-            // Here you would typically update the cart in your system
+        // Function to open product details page
+        function openProductDetails(productId) {
+            // If we're already on the product details page, just update the content
+            updateProductDetails(productId);
+            
+            // Update URL without reloading the page
+            const newUrl = `product-details.html?id=${productId}`;
+            window.history.pushState({ productId: productId }, '', newUrl);
         }
         
-        function buyNow() {
-            const quantity = document.getElementById('quantity').value;
-            alert(`Proceeding to checkout with ${quantity} Samsung Galaxy S23!`);
-            // Here you would redirect to checkout.html
-            window.location.href = "checkout.html";
-        }
+        // Add event listeners for buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get product ID from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id') || 'samsung-galaxy-s23';
+            
+            // Update product details
+            updateProductDetails(productId);
+            
+            // Add event listeners for buttons
+            document.getElementById('add-to-cart-btn').addEventListener('click', function() {
+                const quantity = document.getElementById('quantity').value;
+                const productName = document.getElementById('product-title').textContent;
+                alert(`Added ${quantity} ${productName} to your cart!`);
+            });
+            
+            document.getElementById('buy-now-btn').addEventListener('click', function() {
+                const quantity = document.getElementById('quantity').value;
+                const productName = document.getElementById('product-title').textContent;
+                const productPrice = document.getElementById('current-price').textContent;
+                
+                // Store checkout information
+                localStorage.setItem('checkout_product', JSON.stringify({
+                    name: productName,
+                    price: productPrice,
+                    quantity: quantity,
+                    image: document.getElementById('main-product-image').src
+                }));
+                
+                alert(`Proceeding to checkout with ${quantity} ${productName}!`);
+                window.location.href = "checkout.html";
+            });
+            
+            // Handle browser back/forward buttons
+            window.addEventListener('popstate', function(event) {
+                if (event.state && event.state.productId) {
+                    updateProductDetails(event.state.productId);
+                } else {
+                    // Default to Samsung Galaxy S23 if no state
+                    updateProductDetails('samsung-galaxy-s23');
+                }
+            });
+        });
     </script>
 </body>
 </html>
