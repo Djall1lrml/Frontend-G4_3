@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechMarket</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style/styles.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -54,7 +54,7 @@
                 <div class="header-icons">
                     <a href="#"><i class="fas fa-shopping-bag"></i></a>
                     <a href="#"><i class="fas fa-globe"></i></a>
-                    <a href="new_sign.html"><i class="fas fa-user"></i></a>
+                    <a href="new_sign.php"><i class="fas fa-user"></i></a>
                 </div>
             </div>
         </div>
@@ -972,7 +972,7 @@
 
         // Function to open product details page
         function openProductDetails(productId) {
-            window.location.href = `product-details.html?id=${productId}`;
+            window.location.href = `product-details.php?id=${productId}`;
         }
     </script>
 </body>

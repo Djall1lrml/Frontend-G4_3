@@ -1,3 +1,56 @@
+<?php 
+    include 'C:\xampp\htdocs\tutorial\php\config.php';
+    session_start();
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+    
+   
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action'])) {
+        try {
+            $pdo = new PDO('mysql:host=localhost:3307;dbname=tutorial', 'root', '');
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+            if ($_POST['action'] == 'register') {
+                $FirstName = $_POST['FirstName'];
+                $LastName = $_POST['LastName'];
+                $Email = $_POST['Email'];
+                $Password = password_hash($_POST['Password'], PASSWORD_DEFAULT);
+                try {
+                    $pdo = new PDO('mysql:host=localhost:3307;dbname=tutorial', 'root', '');
+                    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    $sql = "INSERT INTO users (FirstName, LastName, Email, Password) VALUES (:FirstName, :LastName, :Email, :Password)";
+                    $stmt = $pdo->prepare($sql);
+                    $stmt->execute([
+                        ':FirstName' => $FirstName,
+                        ':LastName' => $LastName,
+                        ':Email' => $Email,
+                        ':Password' => $Password
+                    ]);
+                    echo "Registration successful";
+                    } catch (PDOException $e) {
+                        echo "Error: " . $e->getMessage();
+                    }
+            } elseif ($_POST['action'] == 'login') {
+                $Email = $_POST['Email'];
+                $Password = $_POST['Password'];
+                $stmt = $pdo->prepare("SELECT * FROM users WHERE Email = :Email");
+                $stmt->bindParam(':Email', $Email);
+                $stmt->execute();
+                $user = $stmt->fetch(PDO::FETCH_ASSOC);
+                if ($user && password_verify($Password, $user['Password'])) {
+                    $_SESSION['user_id'] = $user['Id']; 
+                    $_SESSION['user_email'] = $user['Email'];
+                    echo "Login successful";
+                } else {
+                    echo "Invalid email or password";
+                }
+            }
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -508,14 +561,14 @@
     <div class="sign_block">
         <div class="stform">
             <div class="boxo login">
-                <form action="index.html" method="GET">
+                <form action="index.php" method="POST">
                     <h2 class="h2_3">Login</h2>
                     <div class="input-box">
-                        <input type="email" placeholder="Enter your Email" required>
-                        <input type="password" placeholder="Password" required>
+                        <input type="email" name="Email" placeholder="Enter your Email" required>
+                        <input type="password" name="Password" placeholder="Password" required>
                     </div>
                     <div class="forgot-pass"><a href="#">Forgot Password?</a></div>
-                    <button type="submit" class="subm">Sign in</button>
+                    <button type="submit" name="action" value="login" class="subm">Sign in</button>
                     <div class="checks">
                         <img src="https://img.icons8.com/fluency/48/google-logo.png" alt="google-logo"/>
                         <button type="button" class="ggl"><p>Continue with Google</p></button>
@@ -523,16 +576,16 @@
                 </form>
             </div>
             <div class="boxo register">
-                <form action="index.html" method="GET">
-                    <h2 class="h2_3">Registration</h2>
-                    <div class="input-box">
-                        <input type="text" placeholder="FirstName" required>
-                        <input type="text" placeholder="LastName" required>
-                        <input type="email" placeholder="Enter your Email" required>
-                        <input type="password" placeholder="Enter your Password" required>
-                    </div>
-                    <button type="submit" class="subm">Register</button>
-                </form>
+            <form action="index.php" method="POST">
+                <h2 class ="h2_3">Registration</h2>
+                <div class ="input-box">
+                    <input type="text" name="FirstName" placeholder="First Name" required>
+                    <input type="text" name="LastName" placeholder="Last Name" required>
+                    <input type="email" name="Email" placeholder="Email" required>
+                    <input type="password" name="Password" placeholder="Password" required>
+                </div>
+                <button type="submit" class ="subm" name="action" value="register">Register</button>
+            </form>
             </div>
             <div class="slide">
                 <div class="slide- left">
