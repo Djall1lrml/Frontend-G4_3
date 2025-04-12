@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dark-theme">
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">Admin Panel</div>
+      </div>
+
+      <div class="sidebar-content">
+        <nav class="sidebar-menu">
+          <ul>
+            <li class="active">
+              <a href="dashboard.html">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            
+            <li class="has-submenu">
+              <a href="#" class="submenu-toggle">
+                <i class="fa-solid fa-table-cells"></i>
+                <span>Products</span>
+                <i class="fa-solid fa-chevron-down submenu-icon"></i>
+              </a>
+              <ul class="submenu">
+                <li><a href="insert-product.html">Insert product</a></li>
+                <li><a href="view-products.html">View products</a></li>
+              </ul>
+            </li>
+            
+            <li class="has-submenu">
+              <a href="#" class="submenu-toggle">
+                <i class="fa-solid fa-user"></i>
+                <span>Users</span>
+                <i class="fa-solid fa-chevron-down submenu-icon"></i>
+              </a>
+              <ul class="submenu">
+                <li><a href="insert-user.html">Insert user</a></li>
+                <li><a href="view-users.html">View Users</a></li>
+                <li><a href="edit-profile.html">Edit Profile</a></li>
+              </ul>
+            </li>
+            
+            <li class="has-submenu">
+              <a href="#" class="submenu-toggle">
+                <i class="fa-solid fa-pencil"></i>
+                <span>Product Categories</span>
+                <i class="fa-solid fa-chevron-down submenu-icon"></i>
+              </a>
+              <ul class="submenu">
+                <li><a href="insert-category.html">Insert Category</a></li>
+                <li><a href="view-categories.html">View Categories</a></li>
+              </ul>
+            </li>
+            
+            <li>
+              <a href="view-orders.html">
+                <i class="fa-solid fa-list"></i>
+                <span>View Orders</span>
+              </a>
+            </li>
+            
+            <li>
+              <a href="view-payments.html">
+                <i class="fa-solid fa-pencil"></i>
+                <span>View Payments</span>
+              </a>
+            </li>
+            
+            <li>
+              <a href="fidelity-system.html">
+                <i class="fa-solid fa-building"></i>
+                <span>Fidelity System</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      
+      <!-- Bottom sidebar items -->
+      <div class="sidebar-footer">
+        <ul>
+          <li>
+            <a href="settings.html">
+              <i class="fa-solid fa-gear"></i>
+              <span>Settings</span>
+            </a>
+          </li>
+          <li>
+            <a href="help.html">
+              <i class="fa-solid fa-circle-question"></i>
+              <span>Get Help</span>
+            </a>
+          </li>
+          <li>
+            <a href="search.html">
+              <i class="fa-solid fa-search"></i>
+              <span>Search</span>
+            </a>
+          </li>
+          <li class="user-profile">
+            <a href="profile.html">
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-pScSjBqFkTZqiXLxSiwS3sa5IDaHqY.png" alt="User Profile" class="profile-image">
+              <div class="user-info">
+                <span class="user-name">shadcn</span>
+                <span class="user-email">m@example.com</span>
+              </div>
+              <i class="fa-solid fa-ellipsis-vertical menu-dots"></i>
+            </a>
+          </li>
+          <li class="logout-item">
+            <a href="logout.html">
+              <i class="fa-solid fa-power-off"></i>
+              <span>Log Out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="main-header">
+        <div class="header-left">
+          <button id="sidebar-toggle" class="sidebar-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <h1>Dashboard</h1>
+        </div>
+        <div class="header-right">
+          <div class="search-container">
+            <input type="search" placeholder="Search...">
+            <i class="fa-solid fa-search"></i>
+          </div>
+        </div>
+      </header>
+
+      <div class="content-wrapper">
+        <!-- Metric Cards -->
+        <div class="metric-cards">
+          <div class="card metric-card">
+            <div class="card-header">
+              <h3 class="card-title">Total Revenue</h3>
+              <span class="badge positive">+12.5%</span>
+            </div>
+            <div class="card-content">
+              <div class="metric-value">$1,250.00</div>
+              <p class="metric-description">Trending up this month</p>
+              <p class="metric-description">Visitors for the last 6 months</p>
+            </div>
+          </div>
+
+          <div class="card metric-card">
+            <div class="card-header">
+              <h3 class="card-title">New Customers</h3>
+              <span class="badge negative">-20%</span>
+            </div>
+            <div class="card-content">
+              <div class="metric-value">1,234</div>
+              <p class="metric-description">Down 20% this period</p>
+              <p class="metric-description">Acquisition needs attention</p>
+            </div>
+          </div>
+
+          <div class="card metric-card">
+            <div class="card-header">
+              <h3 class="card-title">Active Accounts</h3>
+              <span class="badge positive">+12.5%</span>
+            </div>
+            <div class="card-content">
+              <div class="metric-value">45,678</div>
+              <p class="metric-description">Strong user retention</p>
+              <p class="metric-description">Engagement exceed targets</p>
+            </div>
+          </div>
+
+          <div class="card metric-card">
+            <div class="card-header">
+              <h3 class="card-title">Growth Rate</h3>
+              <span class="badge positive">+4.5%</span>
+            </div>
+            <div class="card-content">
+              <div class="metric-value">4.5%</div>
+              <p class="metric-description">Steady performance</p>
+              <p class="metric-description">Meets growth projections</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chart Section -->
+        <div class="chart-section">
+          <div class="card">
+            <div class="card-header chart-header">
+              <div>
+                <h3 class="card-title">Total Visitors</h3>
+                <p class="card-description">Total for the last 3 months</p>
+              </div>
+              <div class="time-filters">
+                <button class="btn btn-outline active">Last 3 months</button>
+                <button class="btn btn-outline">Last 30 days</button>
+                <button class="btn btn-outline">Last 7 days</button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="chart-container">
+                <canvas id="visitorChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Table Section -->
+        <div class="table-section">
+          <div class="card">
+            <div class="card-header table-header">
+              <div class="tabs">
+                <button class="tab active" data-tab="outline">Outline</button>
+                <button class="tab" data-tab="past-performance">
+                  Past Performance
+                  <span class="tab-badge">3</span>
+                </button>
+                <button class="tab" data-tab="key-personnel">
+                  Key Personnel
+                  <span class="tab-badge">2</span>
+                </button>
+                <button class="tab" data-tab="focus-documents">Focus Documents</button>
+              </div>
+              <div class="table-actions">
+                <button class="btn btn-outline">
+                  <i class="fa-solid fa-columns"></i>
+                  Customize Columns
+                </button>
+                <button class="btn btn-outline">
+                  <i class="fa-solid fa-plus"></i>
+                  Add Section
+                </button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="tab-content active" id="outline">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th class="checkbox-column">
+                        <input type="checkbox">
+                      </th>
+                      <th>Header</th>
+                      <th>Section Type</th>
+                      <th>Status</th>
+                      <th>Target</th>
+                      <th>Limit</th>
+                      <th>Reviewer</th>
+                      <th class="actions-column"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="checkbox-column">
+                        <input type="checkbox">
+                      </td>
+                      <td>Cover page</td>
+                      <td><span class="table-badge">Cover page</span></td>
+                      <td><span class="status-badge in-process">In Process</span></td>
+                      <td>18</td>
+                      <td>5</td>
+                      <td>Eddie Lake</td>
+                      <td class="actions-column">
+                        <button class="btn-icon">
+                          <i class="fa-solid fa-ellipsis-h"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="checkbox-column">
+                        <input type="checkbox">
+                      </td>
+                      <td>Table of contents</td>
+                      <td><span class="table-badge">Table of contents</span></td>
+                      <td><span class="status-badge done">Done</span></td>
+                      <td>29</td>
+                      <td>24</td>
+                      <td>Eddie Lake</td>
+                      <td class="actions-column">
+                        <button class="btn-icon">
+                          <i class="fa-solid fa-ellipsis-h"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="checkbox-column">
+                        <input type="checkbox">
+                      </td>
+                      <td>Executive summary</td>
+                      <td><span class="table-badge">Narrative</span></td>
+                      <td><span class="status-badge done">Done</span></td>
+                      <td>10</td>
+                      <td>13</td>
+                      <td>Eddie Lake</td>
+                      <td class="actions-column">
+                        <button class="btn-icon">
+                          <i class="fa-solid fa-ellipsis-h"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="checkbox-column">
+                        <input type="checkbox">
+                      </td>
+                      <td>Technical approach</td>
+                      <td><span class="table-badge">Narrative</span></td>
+                      <td><span class="status-badge done">Done</span></td>
+                      <td>27</td>
+                      <td>23</td>
+                      <td>Jamik Tashpulatov</td>
+                      <td class="actions-column">
+                        <button class="btn-icon">
+                          <i class="fa-solid fa-ellipsis-h"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tab-content" id="past-performance">
+                <div class="empty-state">Past performance data will appear here</div>
+              </div>
+              <div class="tab-content" id="key-personnel">
+                <div class="empty-state">Key personnel data will appear here</div>
+              </div>
+              <div class="tab-content" id="focus-documents">
+                <div class="empty-state">Focus documents will appear here</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
