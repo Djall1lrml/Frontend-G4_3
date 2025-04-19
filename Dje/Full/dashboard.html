@@ -347,6 +347,71 @@
     </main>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize chart
+      const ctx = document.getElementById('visitorChart').getContext('2d');
+      const chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+          datasets: [{
+            label: 'Visitors',
+            data: [12000, 19000, 15000, 25000, 22000, 30000],
+            backgroundColor: 'rgba(74, 222, 128, 0.2)',
+            borderColor: 'rgba(74, 222, 128, 1)',
+            borderWidth: 2,
+            tension: 0.4
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+      
+      // Tab switching
+      const tabs = document.querySelectorAll('.tab');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          // Remove active class from all tabs
+          tabs.forEach(t => t.classList.remove('active'));
+          // Add active class to clicked tab
+          this.classList.add('active');
+          
+          // Hide all tab content
+          const tabContents = document.querySelectorAll('.tab-content');
+          tabContents.forEach(content => content.classList.remove('active'));
+          
+          // Show the corresponding tab content
+          const tabId = this.getAttribute('data-tab');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+      
+      // Sidebar toggle
+      const sidebarToggle = document.getElementById('sidebar-toggle');
+      const dashboardContainer = document.querySelector('.dashboard-container');
+      
+      sidebarToggle.addEventListener('click', function() {
+        dashboardContainer.classList.toggle('sidebar-collapsed');
+      });
+      
+      // Submenu toggle
+      const submenuToggles = document.querySelectorAll('.submenu-toggle');
+      submenuToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          const parent = this.parentElement;
+          parent.classList.toggle('open');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
