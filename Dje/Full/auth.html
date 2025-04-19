@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechMarket - Login/Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="auth-styles.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span><span class="text-green">Tech</span>Market</span>
+                </div>
+                <div class="tagline">Your Gateway to Tech Innovation</div>
+            </div>
+        </nav>
+        
+        <!-- Authentication Container -->
+        <div class="auth-wrapper">
+            <!-- Login Form -->
+            <div class="auth-container" id="login-form">
+                <h1>Login</h1>
+                <form>
+                    <div class="input-group">
+                        <input type="email" placeholder="Email" required>
+                        <span class="input-icon"><i class="fas fa-envelope"></i></span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="password" placeholder="Password" required>
+                        <span class="input-icon"><i class="fas fa-lock"></i></span>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">Login</button>
+                </form>
+                
+                <p class="form-switch">You Don't Have An Account? <a href="#" id="show-register">Register</a></p>
+            </div>
+            
+            <!-- Registration Form -->
+            <div class="auth-container" id="register-form" style="display: none;">
+                <h1>Registration</h1>
+                <form>
+                    <div class="input-group">
+                        <input type="text" placeholder="First Name" required>
+                        <span class="input-icon"><i class="fas fa-user"></i></span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="text" placeholder="Last Name" required>
+                        <span class="input-icon"><i class="fas fa-user"></i></span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="text" placeholder="Country" required>
+                        <span class="input-icon"><i class="fas fa-globe"></i></span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="text" placeholder="City" required>
+                        <span class="input-icon"><i class="fas fa-globe"></i></span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="email" placeholder="Email" required>
+                        <span class="input-icon"><i class="fas fa-envelope"></i></span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="password" placeholder="Password" required>
+                        <span class="input-icon"><i class="fas fa-lock"></i></span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="password" placeholder="Confirm Password" required>
+                        <span class="input-icon"><i class="fas fa-lock"></i></span>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">By continuing, you agree to the Tech Market Terms of Use</label>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">Register</button>
+                </form>
+                
+                <p class="form-switch">Already have an account? <a href="#" id="show-login">Login</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="auth-script.js"></script>
+</body>
+</html>
